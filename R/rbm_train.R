@@ -86,7 +86,7 @@ do.rbm.train <- function(rbm,batch_x,s){
   dW <- (t(h1) %*% v1 - t(hn)  %*% vn) / m
   dW <- rbm$learningrate * dW
   rbm$vW <- rbm$vW * rbm$momentum + dW
-  dw <- rbm$vW
+  dW <- rbm$vW
   rbm$W <- rbm$W + dW
   
   dB <- colMeans(v1 - vn)
